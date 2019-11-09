@@ -1,0 +1,62 @@
+
+
+<p id="notice"><%= notice %></p>
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+
+<!------ Include the above in your HEAD tag ---------->
+<%= javascript_include_tag  'home', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="todolist not-done">
+             <h1>Todos</h1>
+      				<!-- them vao todo -->
+	             	<%= link_to new_todo_path, class: "btn btn-info" do %>
+	  					<i class="glyphicon glyphicon-plus"></i> New Todo
+					<% end %>
+					<!-- -->
+	                <br>--------------------------</br>
+                    <button id="checkAll" class="btn btn-success">Mark all as done</button>
+                   
+                    <hr>
+                    <ul id="sortable" class="list-unstyled">
+                    <li class="ui-state-default">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="" />
+                                <pre>
+                                	<!-- xem todo list -->
+	                                <dt class="text-muted" >Title: <dd class="text-danger"> <%= @todo.title %></dd></dt>
+	                                <dt class="text-muted">Notes: <dd class="text-danger"> <%= @todo.notes %></dd></dt>
+	                                <!-- -->
+	                            </pre>
+                            </label>
+                        </div>
+                    </li>
+             
+                	</ul>
+                <div class="todo-footer">
+                    <strong><span class="count-todos"></span></strong> Items Left
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="todolist">
+             <h1>Already Done</h1>
+                <ul id="done-items" class="list-unstyled">
+                    <li>Some item <button class="remove-item btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <%= link_to 'Edit', edit_todo_path(@todo),class: 'btn btn-default btn-xs'%> 
+	<%= link_to 'Manage Todo List', todos_path, class: 'btn btn-default btn-xs'%>
+</div>
+
+
+
+
+

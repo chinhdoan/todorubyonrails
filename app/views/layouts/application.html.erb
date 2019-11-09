@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo App</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'%>
+
+  </head>
+  <body>
+  	<%= render 'shared/navigation' %> <!-- task bar cua website ruby -->
+    <div id="main-container" class="container">
+      <!-- body cua website ruby -->
+      <div class="row">
+        <div class="col-xs-9">
+          <%= render 'layouts/flash' %>
+         <!-- muc chinh cua homepage website ruby-->
+         <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- add them javascript de chay tag-->
+  <%= javascript_include_tag 'home.js', media: 'all', 'data-turbolinks-track': 'reload'%>
+</html>

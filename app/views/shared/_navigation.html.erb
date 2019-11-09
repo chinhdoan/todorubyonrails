@@ -1,0 +1,29 @@
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">
+        Todos - list
+     </a>
+   </div>
+    <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+              <% if current_user.todo == nil %>
+                    <li><%= link_to 'Create a todo', new_todo_path %></li>
+              <% else %>
+                    <li><%= link_to 'View Your Task', current_user.todo %> </li>
+              <%end %>
+              <li><%= link_to 'Your Profile', edit_user_registration_path %></li><!-- <li class="divider"></li> -->
+              <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+          <% else %>
+                  <li><%= link_to 'Login', new_user_session_path %></li>
+                  <li><%= link_to 'Signup', new_user_registration_path %></li>
+          <% end %>
+    </ul>
+  </div>
+</nav>
