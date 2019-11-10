@@ -12,6 +12,10 @@
 </div>
 
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ 
+<%= form_with(model: [@profile, @profile.todos.build]) do |f|%>
+<!------ Include the above in your HEAD tag ---------->
+<%= javascript_include_tag  'home', media: 'all', 'data-turbolinks-track': 'reload' %>
 <style> 
 			.test:hover{
             	
@@ -56,10 +60,7 @@
 			
 			}
            
-</style> 
-<%= form_with(model: [@profile, @profile.todos.build]) do |f|%>
-<!------ Include the above in your HEAD tag ---------->
-<%= javascript_include_tag  'home', media: 'all', 'data-turbolinks-track': 'reload' %>
+</style>
 <div class="container">
     <div class="row">
         <div class="col-md-6">

@@ -43,3 +43,46 @@ li.ui-state-default:last-child{
     color: #989898;
     text-align: center;
 }
+
+.test:hover{
+                
+        text-decoration: none;
+} 
+.test{
+    text-align: right;
+}
+label {
+
+    margin-right:50px;
+}
+div.testform{
+     position: relative;
+      width: 100%;
+      height: 100%;
+
+}
+pre { 
+    background-color : #fdffe2;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    line-height: 0.5;   
+    word-break: break-all;
+    white-space: pre-wrap;
+    white-space: pre\9; /* IE7+ */
+    display: block;
+    
+} 
+
+
+div.test{
+  position: absolute;
+
+  right: 0;
+  width: 200px;
+  height: 50px;
+ 
+
+}
