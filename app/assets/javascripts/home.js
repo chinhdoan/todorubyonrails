@@ -1,5 +1,6 @@
 
 
+
  
 // all done btn
 $("#checkAll").click(function(){
@@ -7,7 +8,7 @@ $("#checkAll").click(function(){
 });
  
 //create todo
-$('.add-todo').on('keypress',function (e) {
+$('.add-todo' & '.add-todo2').on('keypress',function (e) {
       e.preventDefault
       if (e.which == 13) {
            if($(this).val() != ''){
@@ -16,6 +17,8 @@ $('.add-todo').on('keypress',function (e) {
             countTodos();
            }else{
                // some validation
+               alert('Title and Note can not be blank');
+
            }
       }
 });
@@ -45,8 +48,9 @@ function createTodo(text){
     var markup = '<li class="ui-state-default"><div class="checkbox"><label><input type="checkbox" value="" />'+ text +'</label></div></li>';
     $('#sortable').append(markup);
     $('.add-todo').val('');
+
 }
- 
+
 //mark task as done
 function done(doneItem){
     var done = doneItem;
@@ -77,3 +81,5 @@ function AllDone(){
 function removeItem(element){
     $(element).parent().remove();
 }
+
+

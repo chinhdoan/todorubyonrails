@@ -15,7 +15,7 @@ class TodosController < ApplicationController
 
   # GET /todos/new
   def new
-    @todo = current_user.build_todo
+    @todo = Todos.new
 
   end
 
@@ -26,12 +26,15 @@ class TodosController < ApplicationController
   # POST /todos
   # POST /todos.json
   def create
-    @todo = current_user.build_todo(todo_params)
+    @profile = Profile.find(params[:profile_id])
+    @todo = @profile.todos.build(todo_params) 
+    @todo.user_id = current_user.id
+  
 
     respond_to do |format|
       if @todo.save
         flash[:success] = 'Todo was successfully created.'
-        format.html { redirect_to @todo }
+        format.html { redirect_to @profile}
         format.json { render :show, status: :created, location: @todo }
       else
         flash[:danger] = 'There was a problem creating the Todo.'
@@ -57,18 +60,33 @@ class TodosController < ApplicationController
     end
   end
 
+
+
+
+
+
   # DELETE /todos/1
   # DELETE /todos/1.json
   def destroy
+
+    @profile = Profile.find(params[:profile_id]) 
+    @todo.user_id = current_user.id
     @todo.destroy
+  
+
     respond_to do |format|
+
       flash[:success] = 'Todo was successfully destroyed.'
-      format.html { redirect_to todos_url }
+      format.html { redirect_to @profile}
       format.json { head :no_content }
     end
   end
 
+
+
+
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_todo
       @todo = Todo.find(params[:id])

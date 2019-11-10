@@ -1,6 +1,8 @@
 class Todo < ApplicationRecord
 	belongs_to :user
-	validates :title, presence: true
-	validates :notes, presence: true
+	belongs_to :profile	
 	validates :user_id, presence: true
+	validates :profile_id, presence: true
+	validates :notes, presence: true
+	validates :title, presence: true
 end
