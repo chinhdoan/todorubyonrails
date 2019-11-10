@@ -83,10 +83,13 @@
 	                        	<div class="checkbox">
 	                        		
 	                             		<div class="test">	
-	                    					<%= link_to 'Complete Task' ,[todo.profile,todo], method: :delete ,:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-	                      						:class => 'btn btn-danger checkebox' %>
+
+	                             			 
+	                    					<%= link_to '' ,[todo.profile,todo], method: :delete ,:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+	                      						:class => 'btn btn-danger glyphicon glyphicon-trash checkebox' %>
+	                      					
 	                    				</div>
-		                    			
+		                    	
 		                   				<pre>	
 		                   					<lable>     
 			                                	<dd id="mid" class="text-danger">  #<%= todo.id %></dd>
@@ -108,7 +111,7 @@
         </div>
         <div class="col-md-6">
             <div class="todolist">
-             <h1>Already Done</h1><hr>
+             <h1>Already Done</h1>
                 <ul id="done-items" class="list-unstyled"> 
                 </ul>
             </div>
