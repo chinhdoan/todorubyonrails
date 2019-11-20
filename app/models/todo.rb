@@ -5,4 +5,6 @@ class Todo < ApplicationRecord
 	validates :profile_id, presence: true
 	validates :notes, presence: true
 	validates :title, presence: true
+
+	resourcify
 end

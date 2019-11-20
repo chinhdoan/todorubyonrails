@@ -10,28 +10,5 @@
 
 
 
-50.times do |n|
-	email = Faker::Internet.email
-	password = "password"
-	User.create!(
-		email: email,
-		password: password,
-		password_confirmation: password)
-	puts "created user #{n+1}"
-end
-
-users = User.all 
-
-i = 0
-users.each do |user| 
-	i+= 1
-	title = Faker::Internet.user_name
-	notes = Faker::Address.city
-	user.build_todo(
-		title: title,
-		notes: notes)
-	user.save!
-	puts "created todo #{i}"
-end 
 
 

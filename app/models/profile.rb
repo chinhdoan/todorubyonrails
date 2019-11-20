@@ -4,4 +4,5 @@ class Profile < ApplicationRecord
 	validates :user_id, presence: true
 
 	has_many :todos, dependent: :destroy
+	resourcify
 end

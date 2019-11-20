@@ -16,16 +16,15 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :username, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :username, :class => 'form-control' %>
+      <%= f.text_field :username, placeholder: "Your Name" ,:class => 'form-control' %>
     </div>
     <%=f.error_span(:username) %>
   </div>
 
   <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit  nil, :class => 'btn btn-primary' %>
+    <div class="col-lg-10">
+      <%= f.submit  'Create Task', :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 profiles_path, :class => 'btn btn-default' %>
     </div>

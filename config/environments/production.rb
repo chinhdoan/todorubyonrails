@@ -9,9 +9,23 @@ Rails.application.configure do
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000}
-  # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local       = true
+  config.action_controller.perform_caching = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default_url_options = { :host => 'https://chinhruby-todoapp.herokuapp.com' }
+  config.action_mailer.smtp_settings = {
+    :user_name => 'chinhdoan',
+    :password =>  'abc123456789',
+    :domain => 'https://chinhruby-todoapp.herokuapp.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+  
   config.action_controller.perform_caching = true
 
     # Attempt to read encrypted secrets from `config/secrets.yml.enc`.
