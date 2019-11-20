@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # Use rake db:reset to reset and re-migrate the database.
 
+User.create!(email: 'chinh.doan160202@vnuk.edu.vn', password: '123456789', password_confirmation: '123456789')
 
 
 
