@@ -48,22 +48,7 @@
     </div>
 </div>
 <hr>
-<% if has_role?(:admin) %>
-    <table class="table table-striped">
-        <tbody>
-        <% @users.each do |user| %>
-          <tr>
-            <td><%= user.email %></td>
-            <td><%= user.reset_password_token %></td>
-            <td><%= user.created_at %></td>
-            <td>
-           
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-<% end %>
+
 <body>
 
 
