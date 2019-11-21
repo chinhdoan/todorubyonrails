@@ -6,5 +6,5 @@ class Todo < ApplicationRecord
 	validates :notes, presence: true
 	validates :title, presence: true
 
-	resourcify
+	
 end
