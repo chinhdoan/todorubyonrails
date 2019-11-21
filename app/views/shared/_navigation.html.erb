@@ -14,12 +14,12 @@
 
     <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
+              <% if has_role?(:admin) %>
+                    <li style="font-size: 15px"><%= link_to 'Manage All Task', profiles_path %> </li>
+              <% end %>
               <% if current_user.profile == nil %>
                     <li style="font-size: 15px"><%= link_to 'Create Your Task', new_profile_path %></li>
               <% else %>
-                  <% if has_role?(:admin) %>
-                    <li style="font-size: 15px"><%= link_to 'Manage All Task', profiles_path %> </li>
-                  <% end %>
                   <li style="font-size: 15px"><%= link_to 'Your Task', current_user.profile%> </li>
               <% end %>
               <li style="font-size: 15px"><%= link_to 'My account', edit_user_registration_path %></li><!-- <li class="divider"></li> -->
