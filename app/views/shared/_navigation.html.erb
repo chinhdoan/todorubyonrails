@@ -23,13 +23,17 @@
                 <li style="font-size: 15px"><%= link_to 'My account', edit_user_registration_path %></li><!-- <li class="divider"></li> -->
                 <li style="font-size: 15px"><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>              
                 </ul>
-                </li>
-               
+                </li> 
           <% else %>
                   <li style="font-size: 15px"><%= link_to 'Sign in', new_user_session_path %></li>
                   <li style="font-size: 15px"><%= link_to 'Sign up', new_user_registration_path %></li>
               
-          <% end %>    
+          <% end %>
+
+          <% if has_role?(:admin) %>
+                <li style="font-size: 15px"><%= link_to 'Manage All Task', profiles_path %> </li>
+          <% end %>
+              
     </ul>
   </div>
 </nav>
