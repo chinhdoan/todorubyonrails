@@ -14,9 +14,9 @@
 
     <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-              <% if has_role?(:admin) %>
+              <% if !has_role?(:admin) %>
                     <li style="font-size: 15px"><%= link_to 'Manage All Task', profiles_path %> </li>
-              <% else %>
+              <% end %>
                 <% if current_user.profile == nil %>
                       <li style="font-size: 15px"><%= link_to 'Create Your Task', new_profile_path %></li>
                 <% else %>
