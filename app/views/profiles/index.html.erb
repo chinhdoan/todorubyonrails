@@ -16,7 +16,7 @@
       <tr>
         
         <td><%= link_to profile.id, profile_path(profile) %></td>
-        <td><%= profile.username %></td>
+        <td><%= link_to profile.username, edit_user_registration_path() %></td>
         <td><%=l profile.created_at %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),

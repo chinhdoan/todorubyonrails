@@ -6,7 +6,7 @@
 $("#checkAll").click(function(){
     AllDone();
 });
- 
+
 //create todo
 $('.add-todo' & '.add-todo2').on('keypress',function (e) {
       e.preventDefault
@@ -15,6 +15,7 @@ $('.add-todo' & '.add-todo2').on('keypress',function (e) {
            var todo = $(this).val();
             createTodo(todo);
             countTodos();
+            alert('Hello User ! Title Or Notes can not be blank')
            }else{
                // some validation
                alert('Title and Note can not be blank');
@@ -48,6 +49,7 @@ function createTodo(text){
     var markup = '<li class="ui-state-default"><div class="checkbox"><label><input type="checkbox" value="" />'+ text +'</label></div></li>';
     $('#sortable').append(markup);
     $('.add-todo').val('');
+
 
 }
 
