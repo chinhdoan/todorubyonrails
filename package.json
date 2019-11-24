@@ -1,11 +1,5 @@
 {
-  "name": "todo_app",
+  "name": "todo",
   "private": true,
   "dependencies": {},
-  "engines": {
-    "node": "12.11.1"
-  }
-}
-"scripts": {
-    "start": "node index.js"
 }
