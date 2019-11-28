@@ -15,16 +15,16 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => "utf-8"
-  config.action_mailer.default_url_options = { :host => 'https://chinh-todoapp.herokuapp.com' }
-  config.action_mailer.smtp_settings = {
-    :user_name => 'chinhdoan',
-    :password =>  'abc123456789',
-    :domain => 'https://chinh-todoapp.herokuapp.com',
-    :address => 'smtp.sendgrid.net',
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
-  }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000', :port => '3000' }
+  # config.action_mailer.smtp_settings = {
+  #   :user_name => 'chinhdoan',
+  #   :password =>  'abc123456789',
+  #   :domain => 'https://chinhruby-todoapp.herokuapp.com',
+  #   :address => 'smtp.sendgrid.net',
+  #   :port => 587,
+  #   :authentication => :plain,
+  #   :enable_starttls_auto => true
+  # }
   
   config.action_controller.perform_caching = true
 

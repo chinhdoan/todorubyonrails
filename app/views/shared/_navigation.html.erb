@@ -20,7 +20,7 @@
                     <li style="font-size: 15px"><%= link_to 'Your Task', current_user.profile%> </li>
                 <% end %>
                 <% if current_user.has_role? :admin %>
-                      <li style="font-size: 15px"><%= link_to 'Manage task list', profiles_path%></li>
+                      <li style="font-size: 15px"><%= link_to 'Manage task list', profiles_path %></li>
                 <% end %>
                 <li style="font-size: 15px"><%= link_to 'My account', edit_user_registration_path %></li><!-- <li class="divider"></li> -->
                 <li style="font-size: 15px"><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>          

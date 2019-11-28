@@ -15,11 +15,9 @@ $('.add-todo' & '.add-todo2').on('keypress',function (e) {
            var todo = $(this).val();
             createTodo(todo);
             countTodos();
-            alert('Hello User ! Title Or Notes can not be blank')
            }else{
                // some validation
                alert('Title and Note can not be blank');
-
            }
       }
 });

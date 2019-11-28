@@ -10,6 +10,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    #dafixkhongthaydoineukhongbietgi
     @todos = Todo.where("profile_id = ?", params[:id])
   end
 
@@ -70,6 +71,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:username)
+      params.require(:profile).permit(:username , :user_id)
     end
 end

@@ -9,6 +9,7 @@ class TodosController < ApplicationController
   # GET /todos/1
   # GET /todos/1.json
   def show
+     @todos = Todo.where("profile_id = ?", params[:id])
   end
 
   # GET /todos/new
@@ -45,10 +46,12 @@ class TodosController < ApplicationController
   # PATCH/PUT /todos/1
   # PATCH/PUT /todos/1.json
   def update
+   
+
     respond_to do |format|
       if @todo.update(todo_params)
         flash[:success] = 'Todo was successfully updated.'
-        format.html { redirect_to @todo }
+        format.html { redirect_to profiles_path }
         format.json { render :show, status: :ok, location: @todo }
       else
         flash[:danger] = 'There was a problem updating the Todo.'
@@ -92,6 +95,6 @@ class TodosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def todo_params
-      params.require(:todo).permit(:title, :notes)
+      params.require(:todo).permit(:title, :notes , :user_id, :profile_id)
     end
 end

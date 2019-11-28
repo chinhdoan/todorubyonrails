@@ -77,7 +77,6 @@
 	                <%= f.submit "Add Todo",class: "btn btn-default" %><br>
                     <button id="checkAll" class="btn btn-default">Mark all As Already Done</button>
                     <hr>
-
                     <% @todos.order(created_at: :desc).each do |todo| %>
 	                    <ul id="sortable" class="list-unstyled">
 	                    <li class="ui-state-default">
@@ -88,7 +87,17 @@
 
 	                             			 
 	                    					<%= link_to '' ,[todo.profile,todo], method: :delete ,:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-	                      						:class => 'btn btn-danger glyphicon glyphicon-trash checkebox' %>
+	                      						:class => 'btn btn-default glyphicon glyphicon-trash checkebox' %>
+	                      						<% if current_user.has_role? :admin %>
+	                      						<a href="../todos/<%= todo.id%>/edit">
+						
+													<div  class = 'btn btn-default glyphicon glyphicon-pencil checkebox'>
+														
+													</div>		
+
+												</a>
+	                      					 	<% end %>
+
 	                      					
 	                    				</div>
 		                    	
@@ -123,6 +132,7 @@
 
 <% end %>
 
-
+                        
+ 
 
 
