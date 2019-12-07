@@ -7,6 +7,10 @@ class ProfilesController < ApplicationController
     @profiles = Profile.all
   end
 
+  def search
+    @profiles = Profile.find_by.username(params[:username])
+  end
+
   # GET /profiles/1
   # GET /profiles/1.json
   def show
