@@ -11,17 +11,11 @@
         <div class="col-lg-12">
             <div class="todolist not-done">
              <h2 style="font-size: 30px ; text-align: center"> Ghi Nhớ Công Việc <br>(Todos)</br></h2>
-                <br><input type="text" class="form-control add-todo" placeholder="Add todo"></br>
-                    <button id="checkAll" class="btn btn-success">Add</button>
+                <%= f.text_field :title , class: "form-control add-todo", placeholder: "Add todo" %><br>
+                <%= f.submit "Add Todo",class: "btn btn-success" %><br>
             </div>
         </div>
     </div>
 </div>
 
 <body>
-
-
-
-
-
-
